@@ -5,10 +5,10 @@ def substring(string, dictionary)
   dictionary.each do |word|
     if string.include?(word)
       output[word] = 1
-      new_string = string.slice(string.index(word)+word.length..string.length)
-      while new_string.include?(word) do
+      sub_string = string.slice(string.index(word)+word.length..string.length)
+      while sub_string.include?(word) do
           output[word] += 1
-          new_string = new_string.slice(new_string.index(word)+word.length..new_string.length)
+          sub_string = sub_string.slice(sub_string.index(word)+word.length..sub_string.length)
       end
     end
   end 
