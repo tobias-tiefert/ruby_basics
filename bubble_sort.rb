@@ -1,25 +1,3 @@
-require 'pry-byebug'
-=begin 
-Pseudo-Code für Bubble sort
-
-Ziel: 
-ein Array sortieren (von der kleinsten zur größten Zahl)
-
-Vorgehen: 
-Das Array mehrmals durchgehen und immer wieder eine Zahl mit der danach vergleichen und die Positionen bei bedarf anpassen. 
-Falls irgendwann ein durchlauf passiert, in dem keine Anpassung geschieht, ist das Array fertig sortiert
-
-> mit schleife arbeiten
-> eine Variable speichern in der festgehalten wird, ob sortiert wurde -> bei jeder neuen runde der Schleife am Anfang auf false setzten
-
-input -> array
-
-each with index:
-index mit index+1 vergleichen
-falls index+1 kleiner ist als index: 
-  -> index +1 an index verschie
-=end 
-
 def bubble_sort(input_array)
   sorting = true
   output  = input_array
@@ -40,7 +18,6 @@ def bubble_sort(input_array)
       array_position += 1
     end
   end
-  binding.pry
   output
 end
 
