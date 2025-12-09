@@ -4,12 +4,9 @@ def bubble_sort(input_array)
   while sorting == true do
     sorting = false
     array_position = 0
-    while array_position < output.length do
+    while array_position+1 < output.length do
       this_number = output[array_position]
       next_number = output[array_position+1]
-      if array_position+1 == output.length
-        break
-      end
       if next_number < this_number
         output[array_position] = next_number
         output[array_position+1] = this_number
