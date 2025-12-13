@@ -1,21 +1,17 @@
 def bubble_sort(input_array)
-  sorting = true
-  output  = input_array
-  while sorting == true do
-    sorting = false
-    array_position = 0
-    while array_position+1 < output.length do
-      this_number = output[array_position]
-      next_number = output[array_position+1]
-      if next_number < this_number
-        output[array_position] = next_number
-        output[array_position+1] = this_number
-        sorting = true
-      end
-      array_position += 1
-    end
-  end
-  output
+  sort_one_time(input_array) while sort_one_time(input_array)[1] == true
+  input_array
 end
 
-bubble_sort([321, 8, 8532, 4,3,78,2,120, 987660, 1, -4, 27,2])
+def sort_one_time(input_array)
+  sorting = false
+  input_array.each_with_index do |element, index|
+    if (index < input_array.length - 1) && (element > input_array[index + 1])
+      input_array[index], input_array[index + 1] = input_array[index + 1], input_array[index]
+      sorting = true
+    end
+  end
+  [input_array, sorting]
+end
+
+puts bubble_sort([321, 8, 8_532, 4, 3, 78, 2, 120, 987_660, 1, -4, 27, 2])
